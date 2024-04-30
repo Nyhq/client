@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom'; // Import Link
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const ProductDetail = () => {
@@ -28,6 +28,11 @@ const ProductDetail = () => {
           <p>Description: {product.description}</p>
           {/* Add a button to navigate to the update form */}
           <Link to={`/products/${id}/update`}>Update</Link>
+
+          {/* Add a button to navigate to the add product form */}
+      <Link to="/login">
+        <button>Login</button>
+      </Link>
         </div>
       ) : (
         <p>Loading...</p>
