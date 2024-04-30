@@ -1,13 +1,17 @@
 import { useNavigate } from 'react-router-dom';
 
-const logout = () => {
+const useLogout = () => {
   const navigate = useNavigate();
 
-  // Clear the JWT token from local storage or session storage
-  localStorage.removeItem('token');
-  
-  // Redirect or navigate to the login page
-  navigate.push('/login');
+  const logout = () => {
+    // Clear the JWT token from local storage or session storage
+    localStorage.removeItem('token');
+    
+    // Redirect or navigate to the login page
+    navigate('/login');
+  };
+
+  return logout;
 };
 
-export default logout;
+export default useLogout;
